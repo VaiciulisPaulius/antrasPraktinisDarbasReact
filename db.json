@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "id": "1e0b",
+      "username": "something",
+      "password": "8d23cf6c86e834a7aa6eded54c26ce2bb2e74903538c61bdd5d2197997ab2f72"
+    },
+    {
+      "id": "ec38",
+      "username": "asda",
+      "password": "6f25b3f4bc7eadafb8f57d69f8a59db3b23f198151dbf3c66ac3082381518329"
+    }
+  ],
+  "favourites": []
+}
