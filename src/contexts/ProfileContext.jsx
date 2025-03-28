@@ -45,7 +45,7 @@ function ProfileProvider({children}) {
             setNewStatus("User not logged in. Cant get favourite recipe.", "error")
             return;
         }
-        const recipe = await request("GET", `/favourites?recipeId=${recipeId}`);
+        const recipe = await request("GET", `/favourites?userId=${user.id}&recipeId=${recipeId}`);
         if(recipe) return recipe
         else return null
     }
@@ -54,7 +54,7 @@ function ProfileProvider({children}) {
             setNewStatus("User not logged in. Cant get favourite recipe.", "error")
             return;
         }
-        const favourites = await request("GET", `/favourites`);
+        const favourites = await request("GET", `/favourites?userId=${user.id}`);
 
         if (!favourites || favourites.length === 0) {
             setNewStatus("No favourite recipes found.", "error");

@@ -48,13 +48,14 @@ function RecipeList({ showOnlyFavourites }) {
                     setRecipes(res);
                 }
                 if(res.total) setTotal(res.total);
+                else if(res.length > 1) setTotal(res.length);
             } catch (error) {
                 console.error('Failed to fetch recipes:', error);
             }
         }
 
         fetchRecipes();
-    }, [page]);
+    }, [page, showOnlyFavourites]);
 
     return (
         <div className="flex min-h-screen items-center justify-center bg-gray-100">
@@ -65,7 +66,7 @@ function RecipeList({ showOnlyFavourites }) {
                         <RecipeCard recipe={recipe} key={recipe.id}/>
                     ))}
                     <div className="flex justify-center items-center gap-2 mt-4">
-                        <button onClick={() => goToPage(parseInt(page)-1)} disabled={page === 1}
+                        <button onClick={() => goToPage(parseInt(page)-1)} disabled={page <= 1}
                                 className="px-3 py-1 bg-gray-300 rounded disabled:opacity-50">
                             Prev
                         </button>
