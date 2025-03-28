@@ -5,11 +5,11 @@ import UseApiClient from "/src/hooks/UseApiClient.jsx";
 const DummyApiContext = createContext(null)
 
 export function DummyApiProvider({children}) {
-    const { request, loading, error } = UseApiClient(DUMMY_API_ROUTES.BASE_URL)
+    const { request } = UseApiClient(DUMMY_API_ROUTES.BASE_URL)
     const paths = DUMMY_API_ROUTES
 
     return (
-        <DummyApiContext.Provider value={{loading, error, request, paths}}>
+        <DummyApiContext.Provider value={{request}}>
             {children}
         </DummyApiContext.Provider>
     )

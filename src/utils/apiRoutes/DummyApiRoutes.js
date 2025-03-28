@@ -1,4 +1,4 @@
-const API_BASE = "https://api.example.com";
+const API_BASE = "https://dummyjson.com";
 
 export const DUMMY_API_ROUTES = {
     BASE_URL: API_BASE,

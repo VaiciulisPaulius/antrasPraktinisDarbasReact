@@ -5,11 +5,10 @@ import UseApiClient from "/src/hooks/UseApiClient.jsx";
 const JsonApiContext = createContext(null)
 
 export function JsonApiProvider({children}) {
-    const { request, loading, error } = UseApiClient(JSON_API_ROUTES.BASE_URL)
-    const paths = JSON_API_ROUTES
+    const { request } = UseApiClient(JSON_API_ROUTES.BASE_URL)
 
     return (
-        <JsonApiContext.Provider value={{loading, error, request, paths}}>
+        <JsonApiContext.Provider value={{request}}>
             {children}
         </JsonApiContext.Provider>
     )
